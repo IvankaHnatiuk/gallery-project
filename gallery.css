@@ -37,3 +37,8 @@ body {
 .preview:focus {
   outline: 3px solid black;
 }
+.preview:hover {
+  border-color: #666;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}

@@ -3,6 +3,7 @@ function upDate(previewPic) {
   let imageDiv = document.getElementById("image");
   imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
   imageDiv.textContent = previewPic.alt;
+  imageDiv.setAttribute("aria-label", previewPic.alt); // ✅ per screen reader
 }
 
 function unDo() {
@@ -10,6 +11,7 @@ function unDo() {
   let imageDiv = document.getElementById("image");
   imageDiv.style.backgroundImage = "url('')";
   imageDiv.textContent = "Hover over an image below to display here.";
+  imageDiv.setAttribute("aria-label", "Hover over an image below to display here."); // ✅ reset
 }
 
 function initializeGallery() {
@@ -26,15 +28,13 @@ function initializeGallery() {
     });
 
     images[i].addEventListener("focus", function () {
-      console.log("Image focused:", this.alt);
       upDate(this);
     });
 
     images[i].addEventListener("blur", function () {
-      console.log("Image lost focus:", this.alt);
       unDo();
     });
 
-    images[i].setAttribute("tabindex", "0");
+    images[i].setAttribute("tabindex", "0"); 
   }
 }
