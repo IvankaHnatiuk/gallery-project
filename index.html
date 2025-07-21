@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
+</head>
+
+<body onload="initializeGallery()">
+
+  <h1>Accessible Photo Gallery</h1>
+
+  <div id="image" aria-live="polite">
+    Hover over an image below to display here.
+  </div>
+
+  <div class="gallery">
+    <img class="preview" src="image1.jpg" alt="Sunflower Flower" >
+    <img class="preview" src="image2.jpg" alt="Rose flower" >
+    <img class="preview" src="image3.jpg" alt="Buterflies" >
+    <img class="preview" src="image4.jpg" alt="Bouquet" >
+    <img class="preview" src="image5.jpg" alt="Flower" >
+    <img class="preview" src="image6.jpg" alt="Flowers" >
+  </div>
+
+</body>
+</html>
